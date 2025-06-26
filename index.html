@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Layout com Imagem e CTA</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body, button, h1, p {
+      font-family: "SF Pro Text", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="background"></div>
+
+  <div class="container">
+    <div class="image-wrapper">
+      <img src="image_1.jpg" alt="Imagem de topo" class="top-image" id="hero-image" />
+    </div>
+
+    <h1>This is the title</h1>
+
+    <div class="texto">
+      <p>
+        Integer fermentum augue metus, at molestie neque fringilla eget. Aliquam auctor vitae sapien in venenatis. Integer varius enim sit amet nibh euismod.
+      </p>
+    </div>
+
+    <button class="cta-button">CTA</button>
+  </div>
+<script>
+  function isTabletLandscape() {
+    const width = window.innerWidth;
+    const height = window.innerHeight;
+    const ratio = width / height;
+
+    return (
+      window.matchMedia('(orientation: landscape)').matches &&
+      width >= 820 && width <= 1400 && // tablets em landscape
+      ratio < 1.6
+    );
+  }
+
+  const imageEl = document.getElementById('hero-image');
+  if (isTabletLandscape()) {
+    imageEl.src = 'image_2.jpg';
+    imageEl.style.maxHeight = '680px';
+    imageEl.style.maxWidth = 'none';
+  }
+</script>
+
+</body>
+</html>

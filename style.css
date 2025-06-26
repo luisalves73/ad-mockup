@@ -1,0 +1,126 @@
+/* Fundo geral com imagem de fundo */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #000;
+  position: relative;
+  min-height: 100vh;
+}
+/* Fonte base para o parágrafo */
+.texto p {
+  margin: 12px auto 24px auto;
+  padding: 0 32px;
+  max-width: 680px;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.8);
+  font-family: "SF Pro Text", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 400; /* Regular */
+  line-height: 20px;
+}
+
+/* Título */
+h1 {
+  margin-top: 24px;
+  margin-bottom: 0;
+  font-size: 28px;
+  color: #fff;
+  font-family: "SF Pro Text", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-weight: 700; /* Bold */
+}
+@font-face {
+  font-family: 'SF Pro Text';
+  src: url('fonts/SFProText-Regular.otf') format('opentype');
+  font-weight: 400;
+}
+@font-face {
+  font-family: 'SF Pro Text';
+  src: url('fonts/SFProText-Bold.otf') format('opentype');
+  font-weight: 700;
+}
+@font-face {
+  font-family: 'SF Pro Text';
+  src: url('fonts/SFProText-Semibold.otf') format('opentype');
+  font-weight: 600;
+}
+/* Botão CTA */
+.cta-button {
+  background-color: #E5A00D;
+  color: #000;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 40px;
+  font-size: 16px;
+  font-family: "SF Pro Text", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-weight: 600; /* SemiBold */
+  cursor: pointer;
+  min-width: 180px;
+  max-width: 220px;
+  width: 100%;
+  margin-top: 8px;
+}
+
+
+.background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('background.jpg') no-repeat center center;
+  background-size: cover;
+  z-index: -1;
+}
+
+.container {
+
+  margin: 0 auto;
+  padding: 0;
+  text-align: center;
+}
+
+/* Imagem principal com fade */
+.image-wrapper {
+  position: relative;
+  width: 100%;
+  max-height: 780px;
+  overflow: hidden;
+  margin: 0 0 32px 0;
+}
+
+.top-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  max-height: 780px;
+  object-fit: cover;
+
+  /* fade out usando máscara */
+  -webkit-mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
+  mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
+  -webkit-mask-size: 100% 100%;
+  mask-size: 100% 100%;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+}
+.tablet-landscape-image {
+  display: none;
+}
+@media (max-height: 667px) {
+  .top-image {
+    max-height: 400px;
+  }
+}
+@media (min-width: 901px) {
+  .texto p {
+    font-size: 18px;
+    line-height: 26px;
+  }
+  h1 {
+    font-size: 32px;
+  }
+  .cta-button {
+  padding: 16px 24px;
+  border-radius: 48px;
+  }
+}
